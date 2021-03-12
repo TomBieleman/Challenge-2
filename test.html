@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>SpaceX - Mars Situation Report</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="images\favicon.ico"><!--Favicon boven aan de tabblad voor iOS devices-->
+        <link rel="icon" type="image/png" sizes="32x32" href="images\favicon.ico"><!--Favicon boven aan de tabblad-->
+    </head>
+    <body>
+        <main>
+            <div class="charts">
+                <canvas id="consumption"></canvas>
+            </div>
+            <div class="charts">
+                <canvas id="sales"></canvas>
+            </div>
+            <div class="charts">
+                <canvas id="productie"></canvas>
+            </div>
+            <!--<div class="charts">
+                <canvas id="goverment"></canvas>
+            </div>-->
+        </main>
+        <script src="chartjs\dist\Chart.js"></script>
+        <script>
+
+			let consumptionKaart = document.getElementById("consumption").getContext('2d');
+            let consumptieMars = new Chart(consumptionKaart, {
+                type:'bar',
+                data:{
+                    labels:['Kaas','Worst'],
+                    datasets:[{
+                        label:'Populatie',
+                        data:[
+                            300,
+                            20
+                        ]
+                    }]
+                },
+                options:{}
+
+            });
+		</script>
+    </body>
+</html>
