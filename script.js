@@ -7,19 +7,30 @@ function  timeMachine(){
 
     var tijdVoor = (uren - 1) + ":" + (minuten - 1) + ":" + (secondes - 1) + ":" + (milisecondes - 1);
     
-    var uren = uren + ":";
-    var minuten = minuten + ":";
-    var secondes = secondes + ":";
+    if (secondes < 10){
+        secondes = "0" + secondes;
+    } else {
+        secondes = secondes;
+    }
+    if (minuten < 10){
+        minuten = "0" + minuten;
+    } else {
+        minuten = minuten;
+    }
     
-
-    
-    
-    document.getElementById("uur").innerHTML = tijdVoor + "<br>" + uren;
-    document.getElementById("minut").innerHTML = minuten;
-    document.getElementById("second").innerHTML = secondes;
+    document.getElementById("uur").innerHTML = tijdVoor + "<br>" + uren + ":";
+    document.getElementById("minut").innerHTML = minuten + ":";
+    document.getElementById("second").innerHTML = secondes + ":";
     document.getElementById("milisecond").innerHTML = milisecondes;
     setTimeout(timeMachine, Math.floor(Math.random() * 100));
+    if(minuten = minutenVoor){
+        document.getElementById("minut").classList.add("animation");
+    } else {
+        document.getElementById("minut").classList.remove("animation");
+    }
+    var minutenVoor = minuten; 
 }
+
 function test(){
 var element = document.getElementById("test");
     function testYes(){
@@ -31,6 +42,7 @@ var element = document.getElementById("test");
     }
     setInterval(testYes, 3000);
 }
+
 function backgroundColor(){
     var tijd = new Date();
     var tijdTwee = tijd.getHours();
