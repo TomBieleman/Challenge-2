@@ -22,13 +22,15 @@ function  timeMachine(){
     document.getElementById("minut").innerHTML = minuten + ":";
     document.getElementById("second").innerHTML = secondes + ":";
     document.getElementById("milisecond").innerHTML = milisecondes;
-    setTimeout(timeMachine, Math.floor(Math.random() * 100));
-    if(minuten = minutenVoor){
-        document.getElementById("minut").classList.add("animation");
+
+    if(secondes == secondesVoor){
+        document.getElementById("second").classList.remove("animation");
     } else {
-        document.getElementById("minut").classList.remove("animation");
+        document.getElementById("second").classList.add("animation");
     }
-    var minutenVoor = minuten; 
+    var secondesVoor = secondes; 
+    
+    setTimeout(timeMachine, Math.floor(Math.random() * 100));
 }
 
 function test(){
@@ -55,6 +57,7 @@ function backgroundColor(){
     }
 }
 window.onload = function(){
+        timeMachine();
         test();
         backgroundColor();
 }
