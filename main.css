@@ -9,13 +9,12 @@
 *{
     font-family: DDIN;
     color: white;
-    
+    overflow: hidden;
 }
 body{
     width: 100%;
     height: 100vh;
     margin: 0px;
-    overflow: hidden;
 }
 .night{
     background-color: black;
@@ -29,22 +28,14 @@ body{
     animation-duration: 10s;
     animation-iteration-count: 1;
 }
-main{
+/*main{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
     justify-items: center;
     align-items: center;
-}
-.sky{
-    position: absolute;
-    transform: rotate(10deg);
-    left: -100%;
-    top: -40%;
-}
-.sky2{
-    z-index: -15;
+}*/
+#sky{
     position: absolute;
     transform: rotate(10deg);
     left: -100%;
@@ -84,7 +75,7 @@ main{
 }
 #wolk5{
     top: -70px;
-    animation-duration: 22s;
+    animation-duration: 17s;
     animation-delay: 14s;
     z-index: -10;
 }
@@ -155,12 +146,10 @@ main{
     z-index: 1;
 }
 #tijdTeller{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    /*position: absolute;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);*/
+    transform: translateX(-50%) translateY(-50%);
 }
 #tijdTeller h1{
     font-family: DDINBold;
