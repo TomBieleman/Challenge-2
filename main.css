@@ -41,14 +41,13 @@ main{
     position: absolute;
     transform: rotate(10deg);
     left: -100%;
-    top: -40%;
+    z-index: -15;
 }
 .sky2{
-    z-index: -15;
+    z-index: 10;
     position: absolute;
     transform: rotate(10deg);
     left: -100%;
-    top: -40%;
 }
 .wolken{
     position: relative;
@@ -167,14 +166,20 @@ main{
     font-size: 60px;
 }
 .teller{
-    display: inline;
+    display: inline-block;
     font-family: DDIN;
     font-size: 60px;
+    margin-top: 25px;
 }
 .animation{
     transform-origin: bottom center;
     animation-name: numberChange;
     animation-duration: 1s;
+}
+.animationMili{
+    transform-origin: bottom center;
+    animation-name: numberChange;
+    animation-duration: 100ms;
 }
 #shake{
     position: absolute;
@@ -268,9 +273,11 @@ main{
 @keyframes numberChange {
     from {
         transform: rotateX(90deg) translateY(-50px);
+        opacity: 0%;
     }
     to {
         transform: rotateX(0deg) translateY(0px);
+        opacity: 100%;
     }
 }
 @keyframes nightday {

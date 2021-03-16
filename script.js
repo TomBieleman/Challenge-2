@@ -1,3 +1,8 @@
+var urenVoor = 0;
+var minutenVoor = 0;
+var secondesVoor = 0;
+var milisecondesVoor = 0;
+
 function  timeMachine(){
     var klok = new Date();
     var uren = klok.getHours();
@@ -18,32 +23,56 @@ function  timeMachine(){
         minuten = minuten;
     }
     
-    document.getElementById("uur").innerHTML = tijdVoor + "<br>" + uren + ":";
-    document.getElementById("minut").innerHTML = minuten + ":";
-    document.getElementById("second").innerHTML = secondes + ":";
-    document.getElementById("milisecond").innerHTML = milisecondes;
+    // document.getElementById("uur").innerHTML = uren;
+    // document.getElementById("minut").innerHTML = minuten;
+    // document.getElementById("second").innerHTML = secondes;
+    // document.getElementById("milisecond").innerHTML = milisecondes;
 
-    if(secondes == secondesVoor){
-        document.getElementById("second").classList.remove("animation");
-    } else {
-        document.getElementById("second").classList.add("animation");
+    animation(uren, urenVoor, "uur", "animation");
+    animation(minuten, minutenVoor, "minut", "animation");
+    animation(secondes, secondesVoor, "second", "animation");
+    animation(milisecondes, milisecondesVoor, "milisecond", "animationMili");
+    
+    function animation(tijdeenheid, tijdeenheidVoor, id, animation){
+        if(tijdeenheid == tijdeenheidVoor){
+            document.getElementById(id).classList.add(animation);
+            document.getElementById(id).innerHTML = tijdeenheid;
+        } else {
+            document.getElementById(id).classList.remove(animation);
+        }
     }
-    var secondesVoor = secondes; 
+    urenVoor = uren; 
+    minutenVoor = minuten; 
+    secondesVoor = secondes; 
+    milisecondesVoor = milisecondes;
     
     setTimeout(timeMachine, Math.floor(Math.random() * 100));
 }
 
-function test(){
-var element = document.getElementById("test");
-    function testYes(){
-        element.classList.add("animation");
-        setTimeout(testPlease, 2000);
-    }
-    function testPlease(){
-        element.classList.remove("animation");
-    }
-    setInterval(testYes, 3000);
-}
+// OUTDATED ANIMATIONS
+// function animation(){
+//     var element = document.getElementById("second");
+//     function animationYes(){
+//         element.classList.add("animation");
+//         setTimeout(animationPlease, 2000);
+//     }
+//     function animationPlease(){
+//         element.classList.remove("animation");
+//     }
+// setInterval(animationYes, 3000); 
+// }
+// function test(){
+//     var element = document.getElementById("test");
+//     function testYes(){
+//         element.classList.add("animation");
+//         setTimeout(testPlease, 2000);
+//     }
+//     function testPlease(){
+//         element.classList.remove("animation");
+//     }
+//     setInterval(testYes, 3000);
+// }
+// OUTDATED ANIMATIONS
 
 function backgroundColor(){
     var tijd = new Date();
@@ -56,8 +85,8 @@ function backgroundColor(){
         document.getElementById("body").classList.remove("day");
     }
 }
+
 window.onload = function(){
         timeMachine();
-        test();
         backgroundColor();
 }
