@@ -41,6 +41,21 @@ function  timeMachine(){
             document.getElementById(id).classList.remove(animation);
         }
     }
+    // animation(uren, urenVoor, "uur", "animation", "animationDown");
+    // animation(minuten, minutenVoor, "minut", "animation", "animationDown");
+    // animation(secondes, secondesVoor, "second", "animation", "animationDown");
+    // animation(milisecondes, milisecondesVoor, "milisecond", "animationMili", "animationDown");
+    
+    // function animation(tijdeenheid, tijdeenheidVoor, id, animationUp, animationDown){
+    //     if(tijdeenheid == tijdeenheidVoor){
+    //         document.getElementById(id).classList.remove(animationDown);
+    //         document.getElementById(id).classList.add(animationUp);
+    //         document.getElementById(id).innerHTML = tijdeenheid;
+    //     } else {
+    //         document.getElementById(id).classList.remove(animationUp);
+    //         document.getElementById(id).classList.add(animationDown);
+    //     }
+    // }
     urenVoor = uren; 
     minutenVoor = minuten; 
     secondesVoor = secondes; 
