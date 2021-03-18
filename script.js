@@ -8,9 +8,9 @@ function  timeMachine(){
     var uren = klok.getHours();
     var minuten = klok.getMinutes();
     var secondes = klok.getSeconds();
-    var milisecondes = Math.floor(klok.getMilliseconds() / 10);
+    //var milisecondes = Math.floor(klok.getMilliseconds() / 10); Outdated
 
-    var tijdVoor = (uren - 1) + ":" + (minuten - 1) + ":" + (secondes - 1) + ":" + (milisecondes - 1);
+    //var tijdVoor = (uren - 1) + ":" + (minuten - 1) + ":" + (secondes - 1) + ":" + (milisecondes - 1); OUTDATED TIME ANIMATIONS
     
     if (secondes < 10){
         secondes = "0" + secondes;
@@ -31,7 +31,7 @@ function  timeMachine(){
     animation(uren, urenVoor, "uur", "animation");
     animation(minuten, minutenVoor, "minut", "animation");
     animation(secondes, secondesVoor, "second", "animation");
-    animation(milisecondes, milisecondesVoor, "milisecond", "animationMili");
+    //animation(milisecondes, milisecondesVoor, "milisecond", "animationMili"); Outdated
     
     function animation(tijdeenheid, tijdeenheidVoor, id, animation){
         if(tijdeenheid == tijdeenheidVoor){
@@ -59,7 +59,7 @@ function  timeMachine(){
     urenVoor = uren; 
     minutenVoor = minuten; 
     secondesVoor = secondes; 
-    milisecondesVoor = milisecondes;
+    //milisecondesVoor = milisecondes; Outdated
     
     setTimeout(timeMachine, Math.floor(Math.random() * 100));
 }
